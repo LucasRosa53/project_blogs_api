@@ -17,10 +17,9 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
-      userId: {
+      user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        field: 'user_id',
         references: {
           model: 'users',
           key: 'id',
@@ -34,7 +33,7 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: sequelize.fn('now'),
       },
-    })
+    });
   },
 
   down: async (queryInterface, Sequelize) => {

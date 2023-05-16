@@ -22,7 +22,12 @@ const UserSchema = (sequelize, DataTypes) => {
         underscored: true,
       },
     );
+    UserTable.associate = (models) => {
+      UserTable.hasMany(models.BlogPost, {
+          foreignKey: 'user_id', as: 'BlogPost'
+      });
+  }
     return UserTable;
 }
-
+// .associate e .hasMany ou BelongsTo, devem fazer associação com a Table e não o Schema
 module.exports = UserSchema;
