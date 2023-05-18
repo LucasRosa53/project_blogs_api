@@ -15,7 +15,12 @@ const CategorySchema = (sequelize, DataTypes) => {
         name: {
         type: DataTypes.STRING,
         },
-    });
+    },
+    {
+        timestamps: false,
+        underscored: true,
+      }
+    );
     return CategoryTable;
 };
 

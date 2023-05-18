@@ -33,7 +33,13 @@ const BlogPostSchema = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW
         },
-    });
+    },
+    {
+        timestamps: false,
+        underscored: true,
+        tableName: 'blog_posts'
+      }
+    );
     BlogPostTable.associate = (models) => {
         BlogPostTable.belongsTo(models.User, {
             foreignKey: 'user_id', as: 'users'
