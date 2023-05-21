@@ -1,5 +1,4 @@
 const express = require('express');
-
 const loginRouter = require('./routes/loginRouter');
 const userInfoRouter = require('./routes/userInfoRouter');
 
