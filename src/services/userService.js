@@ -2,6 +2,13 @@ const { createToken } = require('../helpers/createToken');
 const { User } = require('../models');
 const { validateInfoUser } = require('../middlewares/validateInfoUser');
 
+const getUserById = async (id) => {
+    const userId = await User.findByPk(id, {
+        attributes: { exclude: 'password' },
+    });
+    return userId;
+};
+
 const userInfo = async (
     body,
 ) => {
@@ -21,4 +28,5 @@ const userInfo = async (
 
 module.exports = {
     userInfo,
+    getUserById,
 };

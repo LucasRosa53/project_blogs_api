@@ -5,6 +5,7 @@ const { validateToken } = require('../middlewares/validateToken');
 
 const userInfo = express.Router();
 
+userInfo.get('/:id', validateToken, userController.getUserById);
 userInfo.get('/', validateToken, allUsersController.getAllUsers);
 userInfo.post('/', userController.userInfo);
 
