@@ -13,6 +13,12 @@ const newCategory = async (body) => {
     return result;
 };
 
+const allCategories = async () => {
+    const category = await Category.findAll();
+    return category;
+};
+
 module.exports = {
     newCategory,
+    allCategories,
 };
