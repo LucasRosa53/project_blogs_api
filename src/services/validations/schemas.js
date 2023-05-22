@@ -6,6 +6,13 @@ const schema = Joi.object({
     password: Joi.string().min(6).required(),
   }).messages({ 'string.empty': 'Some required fields are missing' });
 
+const categoryNameSchema = Joi.object({
+  name: Joi.string().required().messages({
+    'any.required': '"name" is required',
+  }),
+});
+
 module.exports = {
   schema,
+  categoryNameSchema,
 };
