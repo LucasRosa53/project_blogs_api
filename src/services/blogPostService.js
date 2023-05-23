@@ -29,9 +29,6 @@ const blogPostInfo = async (body) => {
     return infos;
 };
 
-// requisição = [1, 2, 4, 8, 11];
-// requisiçãoDB = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 module.exports = {
     blogPostInfo,
     categoriesById,
