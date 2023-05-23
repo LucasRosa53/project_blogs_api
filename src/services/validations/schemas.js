@@ -12,7 +12,14 @@ const categoryNameSchema = Joi.object({
   }),
 });
 
+const blogPostSchema = Joi.object({
+  title: Joi.string().required(),
+  content: Joi.string().required(),
+  categoryIds: Joi.array().items(Joi.number().integer().positive()).required(),
+}).messages({ 'string.empty': 'Some required fields are missing' });
+
 module.exports = {
   schema,
   categoryNameSchema,
+  blogPostSchema,
 };

@@ -3,7 +3,7 @@ const { categoryNameSchema } = require('./validations/schemas');
 // const { validadeCategory } = require('./validations/validateCategoires');
 
 const newCategory = async (body) => {
-    console.log('service', body);
+    // console.log('service', body);
     const { error } = categoryNameSchema.validate(body);
     if (error) {
         return { status: 400, message: error.message };

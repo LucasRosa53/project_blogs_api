@@ -7,8 +7,9 @@ const jwtConfig = {
     algorithm: 'HS256',
   };
 
-const createToken = async (email) => {
+const createToken = async (id, email) => {
     const payload = {
+        id,
         email,
         admin: false,
       };
